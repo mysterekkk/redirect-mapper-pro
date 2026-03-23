@@ -1,11 +1,25 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
+import { unstable_setRequestLocale } from 'next-intl/server';
 import { ThemeProvider } from 'next-themes';
 import { Header } from '@/components/layout/Header';
 
+import enMessages from '@/messages/en.json';
+import plMessages from '@/messages/pl.json';
+import esMessages from '@/messages/es.json';
+import deMessages from '@/messages/de.json';
+import frMessages from '@/messages/fr.json';
+
 const inter = Inter({ subsets: ['latin'] });
+
+const allMessages: Record<string, typeof enMessages> = {
+  en: enMessages,
+  pl: plMessages,
+  es: esMessages,
+  de: deMessages,
+  fr: frMessages,
+};
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -18,15 +32,14 @@ export async function generateMetadata({
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
-  unstable_setRequestLocale(locale);
-  const messages = await getMessages() as Record<string, Record<string, string>>;
+  const messages = allMessages[locale] || allMessages.en;
   return {
-    title: messages?.metadata?.title || 'Redirect Mapper Pro',
-    description: messages?.metadata?.description || 'Free open-source tool for website migration redirect mapping',
+    title: messages.metadata.title,
+    description: messages.metadata.description,
     authors: [{ name: 'LuroWeb - Łukasz Rosikoń', url: 'https://luroweb.pl' }],
     openGraph: {
-      title: messages?.metadata?.title || 'Redirect Mapper Pro',
-      description: messages?.metadata?.description || '',
+      title: messages.metadata.title,
+      description: messages.metadata.description,
       type: 'website',
       locale,
     },
@@ -43,7 +56,7 @@ export function generateStaticParams() {
   ];
 }
 
-export default async function LocaleLayout({
+export default function LocaleLayout({
   children,
   params: { locale },
 }: {
@@ -51,13 +64,13 @@ export default async function LocaleLayout({
   params: { locale: string };
 }) {
   unstable_setRequestLocale(locale);
-  const messages = await getMessages();
+  const messages = allMessages[locale] || allMessages.en;
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider locale={locale} messages={messages}>
             <div className="min-h-screen flex flex-col">
               <Header />
               <main className="flex-1">{children}</main>
