@@ -2,12 +2,13 @@
 
 **Smart 301 redirect mapping for website migrations.**
 
-[![CI](https://github.com/LuroWeb/redirect-mapper-pro/actions/workflows/ci.yml/badge.svg)](https://github.com/LuroWeb/redirect-mapper-pro/actions/workflows/ci.yml)
+[![CI](https://github.com/mysterekkk/redirect-mapper-pro/actions/workflows/ci.yml/badge.svg)](https://github.com/mysterekkk/redirect-mapper-pro/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue.svg)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org/)
+[![Demo](https://img.shields.io/badge/Demo-Live-brightgreen.svg)](https://redirect-mapper-pro.vercel.app)
 
-Free, open-source, **100% client-side** tool for mapping old URLs to new URLs during website migrations. Your data never leaves your browser.
+**[Live Demo](https://redirect-mapper-pro.vercel.app)** | Free, open-source, **100% client-side** tool for mapping old URLs to new URLs during website migrations. Your data never leaves your browser.
 
 ---
 
@@ -38,7 +39,7 @@ Free, open-source, **100% client-side** tool for mapping old URLs to new URLs du
 
 ```bash
 # Clone the repository
-git clone https://github.com/LuroWeb/redirect-mapper-pro.git
+git clone https://github.com/mysterekkk/redirect-mapper-pro.git
 cd redirect-mapper-pro
 
 # Install dependencies

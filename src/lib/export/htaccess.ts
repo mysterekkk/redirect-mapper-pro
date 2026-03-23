@@ -9,7 +9,7 @@ export function generateHtaccess(mappings: RedirectMapping[], options: ExportOpt
     lines.push('# Redirect Mapper Pro - Generated .htaccess redirects');
     lines.push(`# Generated: ${new Date().toISOString().split('T')[0]}`);
     lines.push(`# Total rules: ${active.length}`);
-    lines.push('# https://github.com/LuroWeb/redirect-mapper-pro');
+    lines.push('# https://github.com/mysterekkk/redirect-mapper-pro');
     lines.push('');
     lines.push('RewriteEngine On');
     lines.push('');

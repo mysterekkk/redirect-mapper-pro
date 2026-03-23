@@ -112,7 +112,7 @@ export default function LandingPage({
           <p>
             {t('footerOpenSource')} —{' '}
             <a
-              href="https://github.com/LuroWeb/redirect-mapper-pro"
+              href="https://github.com/mysterekkk/redirect-mapper-pro"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-foreground hover:underline"
