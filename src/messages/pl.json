@@ -25,6 +25,7 @@
     "howStep2": "Kliknij Dopasuj — algorytm zrobi resztę",
     "howStep3": "Przejrzyj mapowania, dostosuj progi pewności",
     "howStep4": "Wyeksportuj reguły przekierowań w preferowanym formacie",
+    "formatsTitle": "Obsługiwane formaty eksportu",
     "footerAuthor": "Stworzone przez",
     "footerOpenSource": "Open source na GitHub"
   },

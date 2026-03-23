@@ -25,6 +25,7 @@
     "howStep2": "Cliquez sur Mapper — l'algorithme fait le gros du travail",
     "howStep3": "Examinez les mappages, ajustez les seuils de confiance",
     "howStep4": "Exportez les règles de redirection dans votre format préféré",
+    "formatsTitle": "Formats d'exportation pris en charge",
     "footerAuthor": "Créé par",
     "footerOpenSource": "Open source sur GitHub"
   },

@@ -25,6 +25,7 @@
     "howStep2": "Haz clic en Mapear — el algoritmo hace el trabajo pesado",
     "howStep3": "Revisa los mapeos, ajusta los umbrales de confianza",
     "howStep4": "Exporta las reglas de redirección en tu formato preferido",
+    "formatsTitle": "Formatos de exportación compatibles",
     "footerAuthor": "Creado por",
     "footerOpenSource": "Código abierto en GitHub"
   },

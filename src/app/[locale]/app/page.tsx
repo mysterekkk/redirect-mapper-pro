@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { UrlInputPanel } from '@/components/app/UrlInputPanel';
 import { MappingTable } from '@/components/app/MappingTable';
 import { StatsBar } from '@/components/app/StatsBar';
@@ -11,19 +12,20 @@ import { useMappingStore } from '@/stores/mapping-store';
 import { Progress } from '@/components/ui/progress';
 
 export default function AppPage() {
+  const t = useTranslations('app');
   const { isProcessing, progress, mappings } = useMappingStore();
 
   return (
-    <div className="container px-4 py-8 space-y-6 max-w-6xl mx-auto">
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-4 sm:space-y-6 max-w-6xl mx-auto">
       <div className="space-y-1">
-        <h1 className="text-2xl font-bold">Redirect Mapper Pro</h1>
-        <p className="text-sm text-muted-foreground">
-          Paste your old and new URLs, match them intelligently, and export redirect rules.
+        <h1 className="text-xl sm:text-2xl font-bold">{t('title')}</h1>
+        <p className="text-xs sm:text-sm text-muted-foreground">
+          {t('pastePlaceholder')}
         </p>
       </div>
 
       <div>
-        <p className="text-sm font-medium mb-2">Platform Preset</p>
+        <p className="text-sm font-medium mb-2">{t('platform')}</p>
         <PlatformPresetSelector />
       </div>
 
@@ -31,7 +33,7 @@ export default function AppPage() {
 
       {isProcessing && (
         <div className="space-y-2">
-          <p className="text-sm text-muted-foreground">Matching URLs...</p>
+          <p className="text-sm text-muted-foreground">{t('matching')}</p>
           <Progress value={progress} />
         </div>
       )}

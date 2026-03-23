@@ -17,7 +17,7 @@ export function StatsBar() {
     : 0;
 
   return (
-    <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+    <div className="grid grid-cols-2 gap-2 sm:gap-4 sm:grid-cols-4">
       <Card>
         <CardContent className="flex items-center gap-2 p-4">
           <ArrowRight className="h-5 w-5 text-primary" />

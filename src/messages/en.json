@@ -25,6 +25,7 @@
     "howStep2": "Click Match — the algorithm does the heavy lifting",
     "howStep3": "Review mappings, adjust confidence thresholds",
     "howStep4": "Export redirect rules in your preferred format",
+    "formatsTitle": "Supported Export Formats",
     "footerAuthor": "Built by",
     "footerOpenSource": "Open source on GitHub"
   },

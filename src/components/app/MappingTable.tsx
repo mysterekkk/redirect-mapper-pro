@@ -30,13 +30,14 @@ export function MappingTable() {
     <Card>
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between flex-wrap gap-2">
-          <CardTitle className="text-lg">Redirect Mappings ({activeMappings.length})</CardTitle>
-          <div className="flex gap-1">
+          <CardTitle className="text-base sm:text-lg">Redirect Mappings ({activeMappings.length})</CardTitle>
+          <div className="flex gap-1 flex-wrap">
             {(['all', 'high', 'medium', 'low'] as const).map((f) => (
               <Button
                 key={f}
                 variant={filter === f ? 'default' : 'outline'}
                 size="sm"
+                className="text-xs sm:text-sm h-7 sm:h-9 px-2 sm:px-3"
                 onClick={() => setFilter(f)}
               >
                 {f.charAt(0).toUpperCase() + f.slice(1)}

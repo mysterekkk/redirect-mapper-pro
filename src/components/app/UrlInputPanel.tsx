@@ -58,7 +58,7 @@ export function UrlInputPanel() {
   const newCount = newUrlsRaw.split('\n').filter(l => l.trim()).length + newUrls.filter(u => !newUrlsRaw.includes(u.originalUrl)).length;
 
   return (
-    <div className="grid gap-4 md:grid-cols-2">
+    <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
       <Card>
         <CardHeader className="pb-3">
           <CardTitle className="text-lg">Old URLs (Source)</CardTitle>
@@ -70,7 +70,7 @@ export function UrlInputPanel() {
         <CardContent className="space-y-3">
           <Textarea
             placeholder="Paste URLs, one per line...&#10;/old-page-one&#10;/blog/old-post&#10;https://old-site.com/page"
-            className="min-h-[200px] font-mono text-sm"
+            className="min-h-[150px] sm:min-h-[200px] font-mono text-xs sm:text-sm"
             value={oldUrlsRaw}
             onChange={(e) => setOldUrlsRaw(e.target.value)}
           />
@@ -107,7 +107,7 @@ export function UrlInputPanel() {
         <CardContent className="space-y-3">
           <Textarea
             placeholder="Paste URLs, one per line...&#10;/new-page-one&#10;/blog/new-post&#10;https://new-site.com/page"
-            className="min-h-[200px] font-mono text-sm"
+            className="min-h-[150px] sm:min-h-[200px] font-mono text-xs sm:text-sm"
             value={newUrlsRaw}
             onChange={(e) => setNewUrlsRaw(e.target.value)}
           />
@@ -133,7 +133,7 @@ export function UrlInputPanel() {
         </CardContent>
       </Card>
 
-      <div className="md:col-span-2 flex gap-3 justify-center">
+      <div className="md:col-span-2 flex flex-col sm:flex-row gap-3 justify-center">
         <Button
           size="lg"
           onClick={handleMatch}
