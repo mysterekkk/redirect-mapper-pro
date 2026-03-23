@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import { unstable_setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import {
   ArrowRightLeft, Zap, BarChart3, Download,
@@ -10,6 +11,7 @@ export default function LandingPage({
 }: {
   params: { locale: string };
 }) {
+  unstable_setRequestLocale(locale);
   const t = useTranslations('landing');
 
   const features = [

@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
 import { ThemeProvider } from 'next-themes';
 import { Header } from '@/components/layout/Header';
 
@@ -18,6 +18,7 @@ export async function generateMetadata({
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
+  unstable_setRequestLocale(locale);
   const messages = await getMessages() as Record<string, Record<string, string>>;
   return {
     title: messages?.metadata?.title || 'Redirect Mapper Pro',
@@ -49,6 +50,7 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  unstable_setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
